@@ -304,4 +304,33 @@ body {
     font-size: 18px;
     display: block;
 }
+
+/* Footer styles */
+.main-footer {
+    background-color: #0288d1; /* Blue background */
+    color: #fff; /* White text */
+    padding: 30px 0 15px 0; /* Top and bottom padding */
+    text-align: center; /* Center all text */
+    margin-top: 0;
+}
+
+.footer-content {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-contact p {
+    margin: 6px 0;
+    font-size: 16px;
+}
+
+.footer-copy {
+    margin-top: 18px;
+}
+
+.footer-copy p {
+    margin: 0;
+    font-size: 14px;
+    color: #e0f7fa; /* Lighter blue for copyright */
 }
