@@ -9,15 +9,21 @@
 <body>
     <!-- Header with navigation tabs -->
     <header class="main-header">
-        <!-- Navigation bar for site links -->
-        <nav>
-            <ul class="nav-tabs">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Programs</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
+        <!-- Logo and Navigation bar for site links -->
+        <div class="header-content">
+            <!-- Logo on the far left -->
+            <img src="img/cw_logo-2.png" alt="Charity Water Logo" class="header-logo">
+            <nav>
+                <ul class="nav-tabs">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Programs</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <!-- Start Fundraiser button on the right -->
+            <a href="#" class="header-fundraiser-btn"><strong>Start Fundraiser</strong></a>
+        </div>
     </header>
 
     <!-- Hero Section: Full-width background image with left-aligned text -->
@@ -45,28 +51,35 @@ water crisis — delivering clean water to rural families in need.
         </div>
     </section>
 
+    <!-- Simple scroll down hint for users -->
+    <div class="scroll-down-hint">
+        <!-- Down arrow and message -->
+        <span class="arrow">&#8595;</span>
+        <span class="hint-text">Scroll down to learn more</span>
+    </div>
+
     <!-- Story Section: Share a story or mission -->
     <section class="story">
-        <h2>Our Story</h2>
+        <h2>Our Mission</h2>
         <p>
-            Millions of people lack access to clean water. Our mission is to change that, one community at a time. 
-            With your help, we can build wells and provide safe water for families around the world.
+            703 million people lack basic access to clean and safe drinking water. We've been on a mission to end the water crisis since 2006, and with the help of generous supporters like you, we're getting closer every day.
         </p>
     </section>
 
     <!-- Impact Story Section: Real-world example with image and text -->
     <section class="impact-story">
         <!-- Heading for the impact story -->
-        <h2>Real Impact: Meet Amina</h2>
+        <h2>Real Impact: Helen's Story</h2>
         <!-- Container for image and text -->
-        <div class="impact-content">
-            <!-- Impact image -->
-            <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Amina with clean water" width="200">
-            <!-- Impact story text -->
-            <p>
-                Amina used to walk miles every day to collect water for her family. Thanks to your support, her village now has a clean water well right in the center of the community. 
-                Now, Amina can spend more time in school and with her friends.
-            </p>
+        <div class="impact-content side-by-side">
+            <!-- Impact image on the left, now bigger -->
+            <img src="img/Impact.jpeg" alt="Amina with clean water" class="impact-img-large">
+            <!-- Impact story text on the right -->
+            <div class="impact-text">
+                <p>
+                    “I am happy now,” Helen beamed. “I have time to eat, my children can go to school. And I can even work in my garden, take a shower and then come back for more water if I want! I am bathing so well.” “Now, I am beautiful,” Helen said.
+                </p>
+            </div>
         </div>
     </section>
 </body>

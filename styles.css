@@ -11,16 +11,44 @@ body {
     background-color: #fff; /* White background for header */
     padding: 0; /* No extra padding */
     border-bottom: 1px solid #eee; /* Thin line below header */
+    /* Add relative positioning for header content */
+    position: relative;
+}
+
+/* Header content layout */
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Keep logo on the left */
+    gap: 30px;
+    height: 60px;
+    width: 100%;
+    position: relative;
+}
+
+/* Logo styles */
+.header-logo {
+    height: 20px; /* Smaller logo height */
+    width: auto;
+    margin-right: 10px;
+    display: block;
+    margin-left: 24px;
 }
 
 /* Navigation bar styles */
 .nav-tabs {
-    list-style: none; /* Remove bullet points */
+    list-style: none;
     margin: 0;
     padding: 0;
-    display: flex; /* Place tabs in a row */
-    justify-content: center; /* Center the tabs */
-    gap: 30px; /* Space between tabs */
+    display: flex;
+    gap: 30px;
+    position: absolute; /* Use absolute to center tabs over header */
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    height: 100%;
+    align-items: center; /* Vertically center tabs */
+    justify-content: center;
 }
 
 .nav-tabs li {
@@ -44,6 +72,26 @@ body {
     color: #000; /* Black text on hover */
 }
 
+/* Style for the Start Fundraiser button in the header */
+.header-fundraiser-btn {
+    background-color: #FFC907; /* Same yellow as other buttons */
+    color: #000; /* Black text */
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 22px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-left: auto; /* Push button to the far right */
+    margin-right: 24px; /* Space from the right edge */
+    transition: background 0.2s, color 0.2s;
+    display: inline-block;
+}
+
+.header-fundraiser-btn:hover {
+    background-color: #e6b800; /* Slightly darker yellow on hover */
+    color: #000;
+}
+
 /* Hero section styles */
 .hero {
     /* Full-width background image */
@@ -51,8 +99,8 @@ body {
     background-size: cover; /* Make the image cover the whole section */
     background-position: top center; /* Show the top part of the image */
     /* Make the hero section much taller to show more of the image */
-    padding-top: 20px;   /* Move h1 even higher by reducing top padding */
-    padding-bottom: 400px;
+    padding-top: 20px;   /* Keep h1 near the top */
+    padding-bottom: 120px; /* Make the hero section shorter */
     color: #fff; /* White text for contrast */
     text-align: center; /* Center the text */
     position: relative; /* For overlay if needed */
@@ -139,16 +187,16 @@ body {
 .story {
     background-color: #ffffff; /* White background */
     padding: 30px 20px; /* Add space inside the section */
-    margin: 20px 0; /* Space above and below */
+    margin: 0; /* Remove space above and below */
     text-align: center; /* Center the text */
 }
 
 /* Impact story section styles */
 .impact-story {
-    background-color: #f9fbe7; /* Very light green background */
-    padding: 30px 20px; /* Space inside the section */
-    margin: 20px 0; /* Space above and below */
-    text-align: center; /* Center the text */
+    background-color: #f4f4f4; /* Light gray background */
+    padding: 60px 20px;
+    margin: 0;
+    text-align: center;
 }
 
 /* Container for impact image and text */
@@ -161,15 +209,45 @@ body {
     margin: 0 auto; /* Center the container */
 }
 
+/* Show image and text side by side in the impact story section */
+.impact-content.side-by-side {
+    flex-direction: row; /* Place items in a row */
+    justify-content: center; /* Center both image and text */
+    align-items: center;
+    gap: 50px; /* More space between image and text */
+    min-height: 320px;
+    width: 100%;
+    max-width: 1100px; /* Allow more space for bigger image and text */
+    margin-left: auto;  /* Center the container */
+    margin-right: auto; /* Center the container */
+}
+
 /* Style for the impact image */
 .impact-content img {
-    border-radius: 8px; /* Rounded corners */
-    width: 200px; /* Fixed width for image */
+    border-radius: 8px;
+    width: 300px; /* Bigger image */
+    height: auto; /* Keep aspect ratio */
+}
+
+/* Make the impact image even bigger and keep it on the left */
+.impact-img-large {
+    width: 520px; /* Larger image */
+    height: auto;
+    border-radius: 8px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* Make sure the text is on the right and easy to read */
+.impact-text {
+    max-width: 500px;
+    text-align: left;
+    margin-left: 0; /* Remove extra left margin for better centering */
 }
 
 /* Style for the impact text */
 .impact-content p {
-    font-size: 16px; /* Normal text size using pixels */
+    font-size: 22px; /* Bigger text size */
     margin: 0;
     color: #333;
 }
@@ -191,11 +269,39 @@ body {
 .donate-button:hover {
     background-color: #e6b800; /* Slightly darker yellow on hover */
 }
-    font-weight: bold; /* Make button text bold */
+
+/* Scroll down hint styles */
+.scroll-down-hint {
+    text-align: center;
+    margin-top: -30px; /* Pull up closer to hero section */
+    margin-bottom: 30px; /* Space before next section */
+    color: #0288d1; /* Blue color for visibility */
+    font-size: 20px;
+    font-family: 'Proxima Nova';
 }
 
-/* Add a hover effect to the button */
-.donate-button:hover {
-    background-color: #0277bd; /* Slightly darker blue */
+.scroll-down-hint .arrow {
+    display: block;
+    font-size: 32px; /* Bigger arrow */
+    margin-bottom: 5px;
+}
+
+.scroll-down-hint .hint-text {
+    font-size: 16px;
+}
+    display: block;
+    font-size: 36px; /* Bigger arrow */
+    margin-bottom: 5px;
+    animation: bounce 1s infinite; /* Add bounce animation */
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0);}
+    50% { transform: translateY(10px);}
+}
+
+.scroll-down-hint .hint-text {
+    font-size: 18px;
+    display: block;
 }
 }
